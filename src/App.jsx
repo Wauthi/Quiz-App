@@ -112,9 +112,10 @@ export default function App() {
           <div className="absolute rounded-full bg-pink-500 opacity-40 w-64 h-64 bottom-4 right-22 z-0 filter blur-2xl" />
           <div className="absolute rounded-full bg-blue-400 opacity-40 w-32 h-32 top-[20%] right-1/4 z-0 filter blur-xl" />
 
+{/* Right Side */}
           {/* <div className="absolute inset-0 bg-gradient-to-r from-red-900 to-black opacity-50 z-20" /> */}
           <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/40 via-transparent to-white/10 backdrop-blur-md" />
-          <div className="relative flex flex-col h-full z-20 bg-gradient-to-br from-white via-slate-100 to-purple-100 shadow-xl backdrop-blur-md rounded-md overflow-y-auto p-4 sm:p-6 md:p-10 pt-16 md:pt-10">
+          <div className="relative flex flex-col h-full z-20 bg-gradient-to-br from-white via-slate-100 to-purple-100 shadow-xl backdrop-blur-md rounded-md overflow-y-auto p-3 sm:p-4 md:p-10 pt-20 md:pt-10">
             {/* Header */}
             <div className="flex justify-between items-center mb-4 select-none">
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black cursor-default">
@@ -132,7 +133,7 @@ export default function App() {
               )}
             </div>
             {/* Main Content */}
-            <div className="flex-1 flex flex-col items-center justify-center text-center mt-6 mb-6 cursor-default">
+            <div className="flex-1 flex flex-col items-center justify-center text-center mt-3 sm:mt-4 mb-4 sm:mb-6 cursor-default">
               {isSummary ? (
                 <>
                   <h2 className="text-3xl font-bold mb-6 cursor-default select-none">
@@ -199,12 +200,12 @@ export default function App() {
               ) : (
                 <>
                   {/* Question Content and Timer*/}
-                  <div className="flex flex-col max-w-[700px] gap-8 sm:gap-10 md:gap-12 items-center justify-between mt-6 mb-8">
+                  <div className="flex flex-col max-w-[700px] gap-5 sm:gap-8 md:gap-10 items-center justify-between mt-4 sm:mt-6 mb-6 sm:mb-8">
                     <h2 className="text-2xl font-semibold text-start cursor-default select-none">
                       {current + 1}: {questions[current].question}
                     </h2>
 
-                    <div className="flex flex-col gap-5 w-full select-none mb-4 sm:mb-6">
+                    <div className="flex flex-col gap-4 sm:gap-5 w-full select-none mb-3 sm:mb-5">
                       {questions[current].options.map((opt, idx) => (
                         <button
                           key={idx}
