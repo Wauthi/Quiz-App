@@ -72,13 +72,13 @@ export default function App() {
           style={{}}>
           <div className="z-40 h-full w-full relative">
             <img
-              src="/public/images/Rising Strength in Red.png"
+              src="/public/images/Leftsideimage.png"
               alt=""
               className="absolute w-full h-full object-cover scale-110"
             />
             <div className="absolute bottom-0 left-0 right-0 h-500 bg-gradient-to-t from-black/40 to-transparent z-500 pointer-events-none" />
           </div>
-          <div className="absolute bottom-0 left-0 right-0 p-4 bg-black/50 text-white z-50 cursor-default backdrop-blur-md backdrop-saturate-150 rounded-t-sm">
+          <div className="absolute bottom-0 left-0 right-0 p-4 bg-red-950/50 text-white z-50 cursor-default backdrop-blur-md backdrop-saturate-150 rounded-t-sm">
             <div className="h-1.5 bg-gray-700 rounded-full overflow-hidden mb-2">
               <div
                 className="h-full bg-green-600 transition-all duration-700 ease-in-out rounded-full shadow-md"
