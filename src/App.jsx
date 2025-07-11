@@ -78,7 +78,7 @@ export default function App() {
             />
             <div className="absolute bottom-0 left-0 right-0 h-500 bg-gradient-to-t from-black/40 to-transparent z-500 pointer-events-none" />
           </div>
-          <div className="absolute bottom-0 left-0 right-0 p-4 bg-red-950/50 text-white z-50 cursor-default backdrop-blur-md backdrop-saturate-150 rounded-t-sm">
+          <div className="absolute bottom-0 left-0 right-0 p-4 bg-red-950/50 text-white z-50 cursor-default backdrop-blur-md backdrop-saturate-150 rounded-t-sm hidden md:block">
             <div className="h-1.5 bg-gray-700 rounded-full overflow-hidden mb-2">
               <div
                 className="h-full bg-green-600 transition-all duration-700 ease-in-out rounded-full shadow-md"
@@ -92,6 +92,20 @@ export default function App() {
             </p>
           </div>
         </div>
+        {/* Responsive Progress Bar */}
+        <div className="md:hidden fixed top-0 left-0 right-0 p-4 bg-red-950/50 text-white z-50 cursor-default backdrop-blur-md backdrop-saturate-150 rounded-t-sm">
+          <div className="h-1.5 bg-gray-700 rounded-full overflow-hidden mb-2">
+            <div
+              className="h-full bg-green-600 transition-all duration-700 ease-in-out rounded-full shadow-md"
+              style={{
+                width: `${(answeredCount / questions.length) * 100}%`,
+              }}
+            />
+          </div>
+          <p className="text-center text-white text-sm md:text-base font-semibold tracking-wide uppercase mt-1">
+            {answeredCount} / {questions.length} Questions Answered
+          </p>
+        </div>
         <div className="w-full md:w-[65%] h-screen relative overflow-hidden">
           {/* Background Circles */}
           <div className="absolute rounded-full bg-indigo-500 opacity-50 w-40 h-40 top-16 left-16 z-0 filter blur-3xl" />
@@ -100,10 +114,10 @@ export default function App() {
 
           {/* <div className="absolute inset-0 bg-gradient-to-r from-red-900 to-black opacity-50 z-20" /> */}
           <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/40 via-transparent to-white/10 backdrop-blur-md" />
-          <div className="relative flex flex-col h-full z-20 bg-gradient-to-br from-white via-slate-100 to-purple-100 shadow-xl backdrop-blur-md rounded-md overflow-y-auto p-6 md:p-10">
+          <div className="relative flex flex-col h-full z-20 bg-gradient-to-br from-white via-slate-100 to-purple-100 shadow-xl backdrop-blur-md rounded-md overflow-y-auto p-4 sm:p-6 md:p-10 pt-16 md:pt-10">
             {/* Header */}
             <div className="flex justify-between items-center mb-4 select-none">
-              <h1 className="text-4xl font-bold text-black cursor-default">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black cursor-default">
                 Quiz App
               </h1>
               {/* Restart */}
@@ -111,7 +125,7 @@ export default function App() {
                 <button
                   onClick={handleRestart}
                   aria-label="Restart Quiz"
-                  className="bg-red-500 text-white px-4 py-2 rounded-md border-none inline-flex items-center gap-2 hover:bg-red-600 transition-colors cursor-pointer select-none">
+                  className="bg-red-500 text-white text-sm sm:text-base px-3 py-1.5 sm:px-4 sm:py-2 rounded-md border-none inline-flex items-center gap-2 hover:bg-red-600 transition-colors cursor-pointer select-none">
                   <RefreshCcw size={18} />
                   Restart Quiz
                 </button>
@@ -185,12 +199,12 @@ export default function App() {
               ) : (
                 <>
                   {/* Question Content and Timer*/}
-                  <div className="flex flex-col max-w-[700px] gap-8 items-center justify-between mt-6 mb-8">
+                  <div className="flex flex-col max-w-[700px] gap-8 sm:gap-10 md:gap-12 items-center justify-between mt-6 mb-8">
                     <h2 className="text-2xl font-semibold text-start cursor-default select-none">
                       {current + 1}: {questions[current].question}
                     </h2>
 
-                    <div className="flex flex-col gap-5 w-full select-none">
+                    <div className="flex flex-col gap-5 w-full select-none mb-4 sm:mb-6">
                       {questions[current].options.map((opt, idx) => (
                         <button
                           key={idx}
@@ -280,5 +294,4 @@ export default function App() {
   );
 }
 
-
-// Make the progress bar appear on top of screen on mobile, reduce Size of Quiz App header on mobile, reduce the size of the space below choices in mobile and reduce the size of Restart Quiz button on mobile
+// Make the progress bar appear on top of screen on small devices, reduce Size of Quiz App header on small devices, reduce the size of the space below choices in small devices and reduce the size of Restart Quiz button on small devices
