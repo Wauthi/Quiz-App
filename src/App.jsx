@@ -93,7 +93,7 @@ export default function App() {
           </div>
         </div>
         {/* Responsive Progress Bar */}
-        <div className="md:hidden fixed top-0 left-0 right-0 p-4 bg-red-950/50 text-white z-50 cursor-default backdrop-blur-md backdrop-saturate-150 rounded-t-sm">
+        <div className="md:hidden fixed top-0 left-0 right-0 px-4 py-0.3 text-white z-50 cursor-default backdrop-blur-md backdrop-saturate-150 rounded-t-sm">
           <div className="h-1.5 bg-gray-700 rounded-full overflow-hidden mb-2">
             <div
               className="h-full bg-green-600 transition-all duration-700 ease-in-out rounded-full shadow-md"
@@ -102,7 +102,7 @@ export default function App() {
               }}
             />
           </div>
-          <p className="text-center text-white text-sm md:text-base font-semibold tracking-wide uppercase mt-1">
+          <p className="text-center text-black text-sm md:text-base font-semibold tracking-wide uppercase mt-1">
             {answeredCount} / {questions.length} Questions Answered
           </p>
         </div>
@@ -112,7 +112,7 @@ export default function App() {
           <div className="absolute rounded-full bg-pink-500 opacity-40 w-64 h-64 bottom-4 right-22 z-0 filter blur-2xl" />
           <div className="absolute rounded-full bg-blue-400 opacity-40 w-32 h-32 top-[20%] right-1/4 z-0 filter blur-xl" />
 
-{/* Right Side */}
+          {/* Right Side */}
           {/* <div className="absolute inset-0 bg-gradient-to-r from-red-900 to-black opacity-50 z-20" /> */}
           <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/40 via-transparent to-white/10 backdrop-blur-md" />
           <div className="relative flex flex-col h-full z-20 bg-gradient-to-br from-white via-slate-100 to-purple-100 shadow-xl backdrop-blur-md rounded-md overflow-y-auto p-3 sm:p-4 md:p-10 pt-20 md:pt-10">
@@ -210,9 +210,8 @@ export default function App() {
                         <button
                           key={idx}
                           onClick={() => handleAnswer(opt)}
-                          className={`focus:outline-none focus-ring-2 focus-ring-blue-500 py-3 rounded-md border border-gray-700 transition-colors duration-200 ${
-                            selected === opt ? "bg-blue-200" : "bg-slate-50"
-                          } hover:bg-blue-100 hover:border-blue-400 w-full text-left px-4 sm:px-6 cursor-pointer`}>
+                          className={`focus:outline-none focus-ring-2 focus-ring-blue-500 py-3 rounded-md border border-gray-700 transition-colors duration-200 ${selected === opt ? "bg-blue-200" : "bg-slate-50"
+                            } hover:bg-blue-100 hover:border-blue-400 w-full text-left px-4 sm:px-6 cursor-pointer`}>
                           {opt}
                         </button>
                       ))}
@@ -220,9 +219,8 @@ export default function App() {
                     <div
                       role="status"
                       aria-live="polite"
-                      className={`text-2xl font-extrabold text-black font-mono self-end mt-4 select-none ${
-                        timer <= 5 ? "animate-ping ring-red-600" : ""
-                      }`}>
+                      className={`text-2xl font-extrabold text-black font-mono self-end mt-4 select-none ${timer <= 5 ? "animate-ping ring-red-600" : ""
+                        }`}>
                       {timer}
                       <div
                         className="absolute bottom-0 left-0 h-1 bg-white-500 transition-all duration-500"
@@ -236,19 +234,17 @@ export default function App() {
 
             {/* Navigation */}
             <div
-              className={`flex ${
-                isSummary ? "justify-center" : "justify-between"
-              }`}>
+              className={`flex ${isSummary ? "justify-center" : "justify-between"
+                }`}>
               {!isSummary && (
                 <button
                   onClick={handlePrev}
                   aria-label="Previous Question"
                   disabled={current === 0}
-                  className={` focus:outline-none focus-ring-2 focus-ring-blue-500 text-black px-4 py-2 rounded-md border-none flex items-center gap-2 transition-colors cursor-pointer select-none ${
-                    current === 0
+                  className={` focus:outline-none focus-ring-2 focus-ring-blue-500 text-black px-4 py-2 rounded-md border-none flex items-center gap-2 transition-colors cursor-pointer select-none ${current === 0
                       ? "bg-gray-400 text-black cursor-not-allowed"
                       : "bg-gray-300 text-black cursor-pointer hover:bg-gray-500"
-                  }`}>
+                    }`}>
                   <SkipBack size={18} />
                   Previous
                 </button>
@@ -264,11 +260,10 @@ export default function App() {
                         : "Go to Next Question"
                     }
                     disabled={!selected}
-                    className={`focus:outline-none focus-ring-2 focus-ring-blue-500 px-4 py-2 rounded-md border-none inline-flex items-center gap-2 transition-colors select-none ${
-                      selected
+                    className={`focus:outline-none focus-ring-2 focus-ring-blue-500 px-4 py-2 rounded-md border-none inline-flex items-center gap-2 transition-colors select-none ${selected
                         ? "bg-red-500 text-white hover:bg-red-600 cursor-pointer"
                         : "bg-gray-400 text-gray-700 cursor-not-allowed"
-                    }`}>
+                      }`}>
                     {current === questions.length - 1 ? "Finish" : "Next"}
                     <SkipForward size={18} />
                   </button>
@@ -294,5 +289,3 @@ export default function App() {
     </>
   );
 }
-
-// Make the progress bar appear on top of screen on small devices, reduce Size of Quiz App header on small devices, reduce the size of the space below choices in small devices and reduce the size of Restart Quiz button on small devices
