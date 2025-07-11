@@ -72,7 +72,7 @@ export default function App() {
           style={{}}>
           <div className="z-40 h-full w-full relative">
             <img
-              src="/public/images/Leftsideimage.png"
+              src="/images/Leftsideimage.png"
               alt=""
               className="absolute w-full h-full object-cover scale-110"
             />
