@@ -231,8 +231,8 @@ export default function App() {
                   disabled={current === 0}
                   className={` focus:outline-none focus-ring-2 focus-ring-blue-500 text-black px-4 py-2 rounded-md border-none flex items-center gap-2 transition-colors cursor-pointer select-none ${
                     current === 0
-                      ? "bg-gray-300 text-black cursor-not-allowed"
-                      : "bg-gray-400 text-black cursor-pointer hover:bg-gray-500"
+                      ? "bg-gray-400 text-black cursor-not-allowed"
+                      : "bg-gray-300 text-black cursor-pointer hover:bg-gray-500"
                   }`}>
                   <SkipBack size={18} />
                   Previous
@@ -252,7 +252,7 @@ export default function App() {
                     className={`focus:outline-none focus-ring-2 focus-ring-blue-500 px-4 py-2 rounded-md border-none inline-flex items-center gap-2 transition-colors select-none ${
                       selected
                         ? "bg-red-500 text-white hover:bg-red-600 cursor-pointer"
-                        : "bg-gray-300 text-gray-700 cursor-not-allowed"
+                        : "bg-gray-400 text-gray-700 cursor-not-allowed"
                     }`}>
                     {current === questions.length - 1 ? "Finish" : "Next"}
                     <SkipForward size={18} />
@@ -279,3 +279,6 @@ export default function App() {
     </>
   );
 }
+
+
+// Make the progress bar appear on top of screen on mobile, reduce Size of Quiz App header on mobile, reduce the size of the space below choices in mobile and reduce the size of Restart Quiz button on mobile
